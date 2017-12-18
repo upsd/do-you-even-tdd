@@ -1,0 +1,33 @@
+{
+  "users": [{
+    "name": "Person A",
+    "age": 52,
+    "points": 3200,
+    "gender": "male",
+    "domestic_store": "Rotherham"
+  }, {
+    "name": "Person B",
+    "age": 23,
+    "points": 40000,
+    "gender": "female",
+    "domestic_store": "Marble Arch"
+  }, {
+    "name": "Person C",
+    "age": 87,
+    "points": 32000,
+    "gender": "female",
+    "domestic_store": "Grantham"
+  }, {
+    "name": "Person D",
+    "age": 34,
+    "points": 56000,
+    "gender": "male",
+    "domestic_store": "Cardiff"
+  }, {
+    "name": "Person E",
+    "age": 23,
+    "points": 12000,
+    "gender": "female",
+    "domestic_store": "Marble Arch"
+  }]
+}

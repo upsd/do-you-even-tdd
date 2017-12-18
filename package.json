@@ -1,0 +1,16 @@
+{
+  "name": "do-you-even-tdd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha my_modules/*/*"
+  },
+  "keywords": [],
+  "author": "Sam Davies",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1"
+  }
+}
