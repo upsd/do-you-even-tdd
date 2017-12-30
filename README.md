@@ -210,27 +210,27 @@ Add the below to that file:
 ```js
 const users = require('./users.json').users;
 
-module.exports = () => {
-    let matchingUsers = users;
+const interrogator = (usersToFilter = users) => {
     return {
         withPointsOver(points) {
-            return this;
+            return interrogator(usersToFilter.filter(u => u.points > points));
         },
         withGenderOf(gender) {
-            return this;
+            return interrogator(matchingUsers.filter(u => u.gender === gender));
         },
         youngerThan(age) {
-            return this;
+            return interrogator(usersToFilter.filter(u => u.age < age));
         },
         withStoreOf(store) {
-            return this;
+            return interrogator(usersToFilter.filter(u => u.domestic_store === store));
         },
         execute() {
-            return matchingUsers;
+            return usersToFilter;
         }
-
     };
 };
+
+module.exports = interrogator;
 ```
 
 Alter your first test, so it reads as follows:

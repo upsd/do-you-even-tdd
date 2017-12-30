@@ -1,27 +1,23 @@
 const users = require('./users.json').users;
 
-module.exports = () => {
-    let matchingUsers = users;
+const interrogator = (usersToFilter = users) => {
     return {
         withPointsOver(points) {
-            matchingUsers = matchingUsers.filter(u => u.points > points);
-            return this;
+            return interrogator(usersToFilter.filter(u => u.points > points));
         },
         withGenderOf(gender) {
-            matchingUsers = matchingUsers.filter(u => u.gender === gender);
-            return this;
+            return interrogator(matchingUsers.filter(u => u.gender === gender));
         },
         youngerThan(age) {
-            matchingUsers = matchingUsers.filter(u => u.age < age);
-            return this;
+            return interrogator(usersToFilter.filter(u => u.age < age));
         },
         withStoreOf(store) {
-            matchingUsers = matchingUsers.filter(u => u.domestic_store === store);
-            return this;
+            return interrogator(usersToFilter.filter(u => u.domestic_store === store));
         },
         execute() {
-            return matchingUsers;
+            return usersToFilter;
         }
-
     };
 };
+
+module.exports = interrogator;
